@@ -1,0 +1,82 @@
+#*--------------- GAME --------------------*
+#Author :- ADITYA NAGOSE (CDAC PG-DHPCAP SEPT 2022)
+#Date   :- 05/11/2022
+#Time   :- 23.46 PM
+#Place  :- Pune
+#Link YT:- https://www.youtube.com/watch?v=2loUi5KxZ3E&list=PLu0W_9lII9agICnT8t4iYVSZ3eykIAOME&index=21
+
+print("*--------------- GAME --------------------*")
+print("|           Guess the number              |")
+print("*-----------------------------------------*")
+i =1
+print()
+while (i<=9):
+    print("Enter the value =")
+    a = int(input())
+    print("You have used",i,"chances of 9 chances.")
+    if (a == 32):
+        print("Congrats You have Guessed the Right Number..........!!!!\n")
+        break
+    elif(a>32):
+        print("Your Number lies below than what you have entered.")
+        print("Try Again.....!!!\n")
+    else:
+        print("Your Number lies above than what you have entered.")
+        print("Try Again.....!!!\n")
+    i = i+1
+    if(i == 10):
+        print("No more chances left.....SORRY.....Play Again")
+        break
+       
+       Output:-
+       
+*--------------- GAME --------------------*
+|           Guess the number              |
+*-----------------------------------------*
+
+Enter the value =
+12
+You have used 1 chances of 9 chances.
+Your Number lies above than what you have entered.
+Try Again.....!!!
+
+Enter the value =
+16
+You have used 2 chances of 9 chances.
+Your Number lies above than what you have entered.
+Try Again.....!!!
+
+Enter the value =
+19
+You have used 3 chances of 9 chances.
+Your Number lies above than what you have entered.
+Try Again.....!!!
+
+Enter the value =
+15
+You have used 4 chances of 9 chances.
+Your Number lies above than what you have entered.
+Try Again.....!!!
+
+Enter the value =
+133
+You have used 5 chances of 9 chances.
+Your Number lies below than what you have entered.
+Try Again.....!!!
+
+Enter the value =
+16
+You have used 6 chances of 9 chances.
+Your Number lies above than what you have entered.
+Try Again.....!!!
+
+Enter the value =
+66
+You have used 7 chances of 9 chances.
+Your Number lies below than what you have entered.
+Try Again.....!!!
+
+Enter the value =
+32
+You have used 8 chances of 9 chances.
+Congrats You have Guessed the Right Number..........!!!!
