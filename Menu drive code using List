@@ -1,0 +1,127 @@
+#*--------------MENU_DRIVEN--------------*
+
+#Author :- Bagira12
+#Date   :- 10/11/2022
+#Time   :- 23.57 PM
+#Menu driven code to manage list of courses by performing add, modify, delete, display such operations.
+#-------------------------------------------------------------------------------------------------------
+
+# Design a system to manage list of course names in an organization
+
+def addnewcourse():
+    print("")
+    cname=input("Enter new course = ")
+    lst.append(cname)
+    return True
+    print("")
+
+def displayall():
+    print("")
+    print("Displaying all courses = ")
+    for num,cname in enumerate(lst,1):  #[(1,'DAC')]
+        print(f"{num} ---> {cname}")
+    print("")
+
+def deletecourse(cname):
+    print("")
+    if cname in lst:
+        ans=input(f"Do you want to delete {cname}(y/n)?")
+        if ans=="y":
+            lst.remove(cname)
+            return 1
+        else:
+            return 2
+    else:
+        return 3
+
+def modifyname(ocname,ncname):
+    print("")
+    if ocname in lst:
+        ans=input(f"do you really want to modify {ocname} {ncname}(y/n)?")
+        if ans=="y":
+            pos=lst.index(ocname)
+            lst[pos]=ncname
+            return 1
+        else:
+            return 2
+    else:
+        return 3
+
+def pardisplay():
+    print("")
+    cname=input("Enter the course name  = ")
+    if cname in lst:
+        print("Displaying courses name available in list = ")
+        print(cname)
+        return 1
+    else:
+        return 0
+    print("")
+
+def sort():
+    print("")
+    lst.sort()
+    print("Sorted Course = ",lst)
+    print("")
+
+
+lst=['PG-ABC','PG-DEF']
+print("*----------------OFFERED_COURSE----------------*")
+choice=0
+while choice!=7:
+    print("MAIN MENU:-")
+    choice=int(input("1. Add new course  \n2. Delete the course  \n3. Display all courses \n4. Modify course name \n5. Display a particular course name \n6. Sort the courses \n7. Exit\nEnter your choice ="))
+
+    if choice==1:
+        status=addnewcourse()
+        if status:  #status==True
+            print("Data added successfully......!")
+            print("")
+    elif choice==2:
+        cname=input("Enter course to delete = ")
+        status=deletecourse(cname)
+        if status==1:
+            print(f"{cname} deleted successfully")
+            print("")
+        elif status==2:
+            print("Found but not deleted.....!")
+            print("")
+        else:
+            print("Data not found.....!!!!!")
+            print("")
+
+    elif choice==3:
+        displayall()
+
+    elif choice==4:
+        ocname=input("Enter old course name = ")
+        ncname=input("Enter new course name = ")
+        status=modifyname(ocname,ncname)
+        if status==1:
+            print("Modified successfully......!")
+            print("")
+        elif status==2:
+            print("Found but not modified.....!")
+            print("")
+        else:
+            print("Not found......!!!!")
+            print("")
+
+    elif choice == 5:
+        status = pardisplay()
+        if status == 1:
+            print("Displayed Successfully......!")
+            print("")
+        else:
+            print("Not Found.....!!!!")
+            print("")
+
+
+    elif choice == 6:
+        sort()
+
+    elif choice==7:
+        print("Thank you for visiting......")
+        print("")
+        
+        
