@@ -1,6 +1,8 @@
 #*-------------------------LIST OPERATIONS-------------------------*
 # DATE = 14-11-2022
 # Author = Bagira19
+# Website link :- https://www.tutorialspoint.com/python/python_lists.htm
+
 
 a=[1,2,3,4,5,6,7,8,9,10]
 print("List  = ",a)
@@ -139,6 +141,5 @@ print("Data Type of B =",type(lst))
 # Data Type of B = <class 'tuple'>
 # B is list now = [12, 13, 14, 15]
 # Data Type of B = <class 'list'>
-# 
-# Process finished with exit code 0
+
 
