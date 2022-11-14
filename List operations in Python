@@ -16,7 +16,7 @@ print("Printing 2nd last element =)",a[-2])
 print("")
 
 #slicing
-print("By default 0 is taken = ",a[:4])             #by default 0 is taken
+print("By default 0 is taken = ",a[:4])          #by default 0 is taken
 print("By default last is taken = ",a[4:])          #by default last is taken
 print("10 is not printed 4 to 9 = ",a[4:10])        # 10 is not printed 4 to 9
 print("")
@@ -27,9 +27,9 @@ print("")
 
 #append in list
 print("Original list =",a)
-a.append(11)                                       #add value at end only
+a.append(11)                      #add value at end only
 print("11 is added in last, list = ",a)
-#a.append([12][13])                                #<-------- Multiple values are NOT possible with append
+#a.append([12][13])                 #<-------- Multiple values are NOT possible with append
 print("12 and 13 is added in list =",a)
 print("")
 
@@ -88,6 +88,20 @@ print("Data Type of B =",type(b))
 lst = list(b)
 print("B is list now =",lst)
 print("Data Type of B =",type(lst))
+print("")
+
+#copy
+print("Original list = \n",lst)
+lst_copy = lst.copy()
+print("Original list A = \n",lst_copy)
+lst_copy.pop()
+print("Modify Copied list a_copy= \n",lst_copy)
+
+# concatenated (+) list lst and lst_copy and * repeat list
+z=lst+lst_copy
+print("Concatenated List = \n",z)
+z=lst * 3
+print("Three times repeat lst = \n",z)
 
 
 #*----------------------OUTPUT----------------------*
@@ -95,51 +109,64 @@ print("Data Type of B =",type(lst))
 
 # List  =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 # Type of A = <class 'list'>
-# 
+#
 # Element at 6th postion ie i+1 =  7
 # Print last Element = 10
 # Printing 2nd last element =) 9
-# 
+#
 # By default 0 is taken =  [1, 2, 3, 4]
 # By default last is taken =  [5, 6, 7, 8, 9, 10]
 # 10 is not printed 4 to 9 =  [5, 6, 7, 8, 9, 10]
-# 
+#
 # Length of list =  10
-# 
+#
 # Original list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 # 11 is added in last, list =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 # 12 and 13 is added in list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-# 
+#
 # INDEX of 6 =  5
-# 
+#
 # How many times 5 appeared in the list =  1
-# 
-# 12 is added at 5th place ie after 5 = 
+#
+# 12 is added at 5th place ie after 5 =
 #  [1, 2, 3, 4, 5, 12, 6, 7, 8, 9, 10, 11]
-# 
-# Last element is removed using pop = 
+#
+# Last element is removed using pop =
 #  [1, 2, 3, 4, 5, 12, 6, 7, 8, 9, 10]
-# 
+#
 # 12 is removed =
 #  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-# 
-# Reversed list = 
+#
+# Reversed list =
 #  [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-# 
+#
 # Original list =  [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 # Sorted list (Ascending order) =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 # Sorted list (Desending order) =  [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-# 
+#
 # Maximum value in the list =  10
 # Minimum value in the list =  1
-# 
+#
 # Original list =  [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-# List after extend = 
+# List after extend =
 #  [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 'S', 'T', 'R', 'I', 'N', 'G']
-# 
+#
 # B is tuple = (12, 13, 14, 15)
 # Data Type of B = <class 'tuple'>
 # B is list now = [12, 13, 14, 15]
 # Data Type of B = <class 'list'>
+#
+# Original list =
+#  [12, 13, 14, 15]
+# Original list A =
+#  [12, 13, 14, 15]
+# Modify Copied list a_copy=
+#  [12, 13, 14]
+# Concatenated List =
+#  [12, 13, 14, 15, 12, 13, 14]
+# Three times repeat lst =
+#  [12, 13, 14, 15, 12, 13, 14, 15, 12, 13, 14, 15]
+#
+# Process finished with exit code 0
 
 
