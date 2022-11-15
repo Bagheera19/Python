@@ -1,0 +1,161 @@
+#*------------------------------DICTIONARY-------------------------------*
+
+#Author :- Bagira12
+#Date   :- 15/11/2022
+#Time   :- 17.54 PM
+
+
+print("*------------------------------DICTIONARY-------------------------------*")
+dict1={'name':'Black Panther', 'Catog': 4, 'spies':'Cat family' }
+print("DICTIONARY = \n",dict1)
+print("Name of the animal = ",dict1['name'])
+print("Category of animal = ",dict1['Catog'])
+print("Spies of animal = ",dict1['spies'])
+print("")
+
+#print("Place of origin = ",dict['place'])                #<-------- ERROR
+
+# updating value
+print("DICTIONARY = ",dict1)
+dict1['name']  = 'Venom'
+dict1['Catog'] = 45
+dict1['spies'] = 'symbitoes'
+print("After Updating dictionary = \n",dict1)
+print("")
+
+# adding to the dictionary
+dict1['place'] = 'Lab'
+print("After adding into dict = \n",dict1)
+print("")
+
+# to print all key of dictionary
+print("Keys of dictionary = ",dict1.keys())
+print("Values of dictionary = ",dict1.values())
+print("Items of dictionary = ",dict1.items())
+print("")
+
+# get values if not then print default value as -1
+print("Is dictionary is having key or not = ",dict1.get('name',-1))
+print("Is dictionary is having key or not = ",dict1.get('gender',-1))   #<--- (-1) act as a default value if key is not present
+print("")
+
+#dict is having key or not
+#print("Key is available or NOT = ",'' in dict)
+
+# length of dictionary
+print("Length of dictionary= ",len(dict1))
+print("")
+
+#string fromat of dictionary
+print("String format of dictionary =\n",str(dict1))
+print("")
+
+#update
+# dict2 = {20,21,22,23,24,25}                                           #<---- ignore this part
+# print("Dictionary = ",dict2)                                          #<---- ignore this part 
+# dict3 = {26,27,28,29,30,31}                                           #<---- ignore this part
+# d= dict2.update(dict3)                                                #<---- ignore this part
+# print("Value of update Dictionary = ", d )                            #<---- ignore this part
+
+#Concatenate two dictionary
+a={'a':10,'b':20,'c':30}
+b={'x':1,'y':2,'z':3}
+c={**a,**b}
+print("Concatenate two Dictionary = \n",c)
+
+#update
+d={'a':10,'b':20,'c':3}
+e={'x':1,'y':2,'z':3}
+print("Updated Dict = ")
+d.update(e)
+print("")
+
+#converting dictionary into list
+list_dict=list(dict1.items())
+print("List_Dict = \n",list_dict)
+print("----------------------------------------------------------------------")
+list_dict=list(dict1.keys())
+print("List_Dict only keys= \n",list_dict)
+print("----------------------------------------------------------------------")
+list_dict=list(dict1.values())
+print("List_Dict only values = \n",list_dict)
+print("")
+
+#to copy
+a1={"Name":"Abhisekh","Age":24,"Place":"Maharashtra"}
+print("Here is A =",a1)
+b1=a1.copy()
+print("Here is B =",b1)
+print("")
+
+#clear all values of dictionary
+a1.clear()
+print("After clearing all values of dictionary A1 = ",a1)
+print("")
+
+#pop
+b1.pop('Age')
+print(b1)
+print("")
+
+#setdefault ----- it is used to show when not in the dictionary
+person = {'Name':'Ankit','age':21}
+nation=person.setdefault('nation',"INDIAN")
+print("Person Details = ",person)
+print("Nation of person = ",nation)
+
+
+
+#------------------------OUTPUT----------------------------*
+
+*------------------------------DICTIONARY-------------------------------*
+DICTIONARY = 
+ {'name': 'Black Panther', 'Catog': 4, 'spies': 'Cat family'}
+Name of the animal =  Black Panther
+Category of animal =  4
+Spies of animal =  Cat family
+
+DICTIONARY =  {'name': 'Black Panther', 'Catog': 4, 'spies': 'Cat family'}
+After Updating dictionary = 
+ {'name': 'Venom', 'Catog': 45, 'spies': 'symbitoes'}
+
+After adding into dict = 
+ {'name': 'Venom', 'Catog': 45, 'spies': 'symbitoes', 'place': 'Lab'}
+
+Keys of dictionary =  dict_keys(['name', 'Catog', 'spies', 'place'])
+Values of dictionary =  dict_values(['Venom', 45, 'symbitoes', 'Lab'])
+Items of dictionary =  dict_items([('name', 'Venom'), ('Catog', 45), ('spies', 'symbitoes'), ('place', 'Lab')])
+
+Is dictionary is having key or not =  Venom
+Is dictionary is having key or not =  -1
+
+Length of dictionary=  4
+
+String format of dictionary =
+ {'name': 'Venom', 'Catog': 45, 'spies': 'symbitoes', 'place': 'Lab'}
+
+Concatenate two Dictionary = 
+ {'a': 10, 'b': 20, 'c': 30, 'x': 1, 'y': 2, 'z': 3}
+Updated Dict = 
+
+List_Dict = 
+ [('name', 'Venom'), ('Catog', 45), ('spies', 'symbitoes'), ('place', 'Lab')]
+----------------------------------------------------------------------
+List_Dict only keys= 
+ ['name', 'Catog', 'spies', 'place']
+----------------------------------------------------------------------
+List_Dict only values = 
+ ['Venom', 45, 'symbitoes', 'Lab']
+
+Here is A = {'Name': 'Abhishekh', 'Age': 24, 'Place': 'Maharashtra'}
+Here is B = {'Name': 'Abhishekh', 'Age': 24, 'Place': 'Maharashtra'}
+
+After clearing all values of dictionary A1 =  {}
+
+{'Name': 'Abhishekh', 'Place': 'Maharashtra'}
+
+Person Details =  {'Name': 'Ankit', 'age': 21, 'nation': 'INDIAN'}
+Nation of person =  INDIAN
+
+Process finished with exit code 0
+
