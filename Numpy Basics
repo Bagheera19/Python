@@ -1,5 +1,12 @@
+#*------------------------------NUMPY_PYTHON-------------------------------*
 
-        
+#Author :- Bagheera19
+#Date   :- 2/12/2022
+#Time   :- 11.16 AM
+#-------------------------------------------------------------------------
+
+print("*------------------------------NUMPY_PYTHON-------------------------------*")
+
 import numpy as np                                           #<----- short hand(alias name)
 #numpy creates array which stores homogenous data
 
@@ -56,6 +63,7 @@ print(f)
 f = d*e                                                         #<----direct multiplication of 2 array
 print(f)
 #---------------------------------------------------------------
+
 f = d.dot(e)                                                    #<----multiplication row * col of 2 array
 print(f)
 
@@ -63,18 +71,19 @@ print(f)
 
 f= np.dot(d,e)                                                   #<----multiplication row * col of array
 print(f)
+
 #---------------------------------------------------------------
 
 f = d/e                                                          #<----divsion of array
 print(f)
 
 
-print(np.sum(d))                                                  #addition of array members
+print(np.sum(d))                                                # addition of array members
 
 
-print(np.sum(d,axis = 0))                                         #0---- col wise addition
+print(np.sum(d,axis = 0))                                       # 0---- col wise addition
 
-print(np.sum(d,axis = 1))                                         #1---- row wise addition
+print(np.sum(d,axis = 1))                                       # 1---- row wise addition
 
 #average of array
 print(np.mean(d))
@@ -84,56 +93,57 @@ print(np.mean(d,axis = 0))
 #average of array for every row
 print(np.mean(d,axis = 1))
 
-print(np.median(d))                                                # middle value
+print(np.median(d))                                            # middle value
 
-print(np.median(d,axis = 0))                                       # middle value at every col.
-print(np.median(d,axis = 1))                                       # middle value at every row.
+print(np.median(d,axis = 0))                                   # middle value at every col.
+print(np.median(d,axis = 1))                                   # middle value at every row.
 
 
 a = np.array([10,20,30])
 b = np.array([100,200,300])
-f = np.vstack((a,b))                                               #<---v - vertically stack
+f = np.vstack((a,b))                                           #<---v - vertically stack
 print(f)
 
-f = np.hstack((a,b))                                               #<---- h - horizontal
+f = np.hstack((a,b))                                           #<---- h - horizontal
 print(f)
 
 #*-----------------------------------------------------------------------*
+
 #slicing of Array
 
 a = np.arange(50).reshape(5,10)
-print(a)                                                           #<----print mat. up to 49
+print(a)                                                       #<----print mat. up to 49
 
-print(a[1:4,2:8])                                                  # row 1 to 3 and col 2 to 7 ,last value is ignored
+print(a[1:4,2:8])                                              # row 1 to 3 and col 2 to 7 ,last value is ignored
 
-print(a[1: , 2: ])                                                 # upto last value blank space means is upto last
+print(a[1: , 2: ])                                             # upto last value blank space means is upto last
 
-print(a[ :4 ,  : 5])                                               # row 0 to 3 col 0 to 4
+print(a[ :4 ,  : 5])                                           # row 0 to 3 col 0 to 4
 
-print(a[ :5 , :])                                                  # row 0 to 4 and col start to end print
+print(a[ :5 , :])                                              # row 0 to 4 and col start to end print
 
-print(a[ :5 , 3])                                                  # row row 0 to 4 and col only 3 
+print(a[ :5 , 3])                                              # row row 0 to 4 and col only 3 
 
-print(a[ :5, -1])                                                  # -1 is showing last col
+print(a[ :5, -1])                                              # -1 is showing last col
 
-print(a[ :5, -2])                                                  # -2 is showing 2nd last col
+print(a[ :5, -2])                                              # -2 is showing 2nd last col
 
 
 a= np.arange(20)
 print(a)
 
-print(a[a>5])                                                      # to print number above 5 in an array
+print(a[a>5])                                                  # to print number above 5 in an array
 
-#print(a[a>7 and a%5==0])                                          # and operation is used check (error)
+#print(a[a>7 and a%5==0])                                      # and operation is used check (error)
 
-print(a[a>5])                                                      # checking 2 conditions num >5 and divisible by 5
+print(a[a>5])                                                  # checking 2 conditions num >5 and divisible by 5
 b=a[a>7]
 c=b[b%5 == 0]
 print(c)
 
 
-a= np.arange(50).reshape(5,10)                                     #<------flip array by every col
-print(a)                                                           #last col to 1st
+a= np.arange(50).reshape(5,10)                                 #<------flip array by every col
+print(a)                                                       #last col to 1st
 print("\n")
 print("Flip Array in row wise")
 print("\n")
@@ -141,8 +151,8 @@ b= np.flip(a,axis=0)
 print(b)
 
 
-a= np.arange(50).reshape(5,10)                                     #<------flip array by every row 
-print(a)                                                           #and last row to 1st num
+a= np.arange(50).reshape(5,10)                                 #<------flip array by every row 
+print(a)                                                       #and last row to 1st num
 print("\n")
 print("Flip Array in col wise")
 print("\n")
