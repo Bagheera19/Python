@@ -5,151 +5,75 @@
 #Time   :- 11.16 AM
 #-------------------------------------------------------------------------
 
-print("*------------------------------NUMPY_PYTHON-------------------------------*")
+import numpy as np
+print("*------------------------NUMPY_OPERATION------------------------*")
+a = np.array([[1,2,3],[4,5,6],[7,8,9]])
+print("A = \n",a)
+b = np.array([[9,8,7],[6,5,4],[3,2,1]])
+print("B = \n",b)
+c = np.array([1,2,3,4,5,6,7,8,9,10])
+print("C = \n",c)
+d = np.array([[1,],[2,],[3,],[4,]])
+print("D = \n",d)
+print("------------------------------------------------------------------")
 
-import numpy as np                                           #<----- short hand(alias name)
-#numpy creates array which stores homogenous data
+print("A + B =\n",a+b)
+print("A - B =\n",a-b)
+print("A * B =\n",a*b)             # direct element multiplication (a11 * b11)
+print("A / B =\n",a/b)
+print("------------------------------------------------------------------")
 
-a = np.array([12,13,45])                                     #<------- declaration of array
-print(a)
-print(type(a))                                               #<---- print type of variable
+print("[A]*[B] = \n",np.dot(a,b));print()    # proper row to column multiplication (a11*b11+a12*b21+a13*b31 = 30)
 
-#properties
+print("Sum of elements of A = \n",np.sum(a))   # Sum of elements of A
+print("Sum of elements of A Column wise = \n",np.sum(a,axis = 0))  #Sum of elements of A Column wise
+print("Sum of elements of A Row wise = \n",np.sum(a,axis = 1));print()  #Sum of elements of A Row wise
+print("------------------------------------------------------------------")
 
-print(a.ndim)                                                #<---- print how many dimension are there
-print(a.shape)                                               #<----- print how many elements are there
-print(a.data)                                                #<----- print memory location
-print(a.dtype)                                               #<-----  print data type of array 
+print("Mean of Matrix A = ",np.mean(a))     # sum/total number of elements  45/9 = 5.0
+print("Mean of Matrix A column wise = ",np.mean(a,axis = 0)) # sum of element in each col /total number of elements in col 12/3 = 4.0
+print("Mean of Matrix A row wise = ",np.mean(a,axis = 1));print() # sum of element in each row /total number of elements in row 6/3 = 2.0
+print("------------------------------------------------------------------")
 
+print("Median of A = ",np.median(a))                 # finds the middle value of matrix
+print("Median of A = ",np.median(a,axis = 0))        # finds the middle value of col wise of a matrix
+print("Median of A = ",np.median(a,axis = 1));print()        # finds the middle value of row wise of a matrix
+print("------------------------------------------------------------------")
 
-#generate data
+print("D matrix using vstack = \n",np.hstack(d))      # make vertical matrix into horizontal matrix
+print("C matrix using hstack = \n",np.vstack(c));print()      # make horizontal matrix into vertical matrix
+print("------------------------------------------------------------------")
 
-b = np.ones((3,3))                                           #<---- all ones in 2d array
-print(b)
+print("Transpose of matrix A = \n",np.transpose(a));print()     # transpose row to column
+print("------------------------------------------------------------------")
 
-b = np.zeros((3,3))                                          #<---- all zeros in 2d array
-print(b)
+print("Matrix A (using flip)=\n",np.flip(a))            # print last to first
+print("Matrix D (using flip)=\n",np.flip(d));print()
+print("------------------------------------------------------------------")
 
-c = np.empty((3,4))                                          #<---- all garbage values in 2d array
-print(c)
+smartix  = np.arange(1,21).reshape(4,5)                # arange take value from 1 to 20 and reshape make matrix into row 4*5 col
+print(smartix);print()
+print("------------------------------------------------------------------")
 
-#  add values in array
-d = np.array([[1,2,3],[4,5,6],[7,8,9]])
-print(d)
+#slicing of array
+Lmatrix = np.arange(20).reshape(4,5)                  # arange takes value from 0 to 19, 20 is excluded
+print("Lmatrix = \n",Lmatrix);print()
+print("------------------------------------------------------------------")
 
-d = np.arange(20)
-print(d)
+print("Matrix from row 1 to 2 and col 1 to 3 = \n",Lmatrix[1:3,1:4]);print()
+print("Matrix from row 0 to 2 = \n",Lmatrix[ :3]),;print()
+print("Matrix whole row and col starting to 2 = \n",Lmatrix[ : , :3]);print()
+print("Matrix from row 0 to -1 and col 0 to -1 = \n",Lmatrix[ :-1, :-1]);print()
 
-d = np.arange(2,20)
-print(d)
+# we can use negative sign from last --> -1 ,second last --> -2
+print("------------------------------------------------------------------")
 
-d = np.arange(2,20,2)
-print(d)
+#some mis. operations
 
-# to arrange the array in matirx form
-d = np.arange(2,20,2).reshape((3,3))
-print(d)
+print("Matrix element only divided by 5 = \n",Lmatrix[Lmatrix%5 == 0]);print()
+print("Matrix element only which are greater than 14 = \n",Lmatrix[Lmatrix>13]);print()
 
-# to arrange the array in matirx form but in vertical form
-e = np.arange(2,20,2).reshape((3,3),order='F')
-print(e)
-
-f = d+e                                                         #<----addition of 2 array
-print(f)
-
-f = d-e                                                         #<----subtraction of 2 array
-print(f)
-
-f = d*e                                                         #<----direct multiplication of 2 array
-print(f)
-#---------------------------------------------------------------
-
-f = d.dot(e)                                                    #<----multiplication row * col of 2 array
-print(f)
-
-#OR
-
-f= np.dot(d,e)                                                   #<----multiplication row * col of array
-print(f)
-
-#---------------------------------------------------------------
-
-f = d/e                                                          #<----divsion of array
-print(f)
-
-
-print(np.sum(d))                                                # addition of array members
-
-
-print(np.sum(d,axis = 0))                                       # 0---- col wise addition
-
-print(np.sum(d,axis = 1))                                       # 1---- row wise addition
-
-#average of array
-print(np.mean(d))
-
-#average of array for every col
-print(np.mean(d,axis = 0))
-#average of array for every row
-print(np.mean(d,axis = 1))
-
-print(np.median(d))                                            # middle value
-
-print(np.median(d,axis = 0))                                   # middle value at every col.
-print(np.median(d,axis = 1))                                   # middle value at every row.
-
-
-a = np.array([10,20,30])
-b = np.array([100,200,300])
-f = np.vstack((a,b))                                           #<---v - vertically stack
-print(f)
-
-f = np.hstack((a,b))                                           #<---- h - horizontal
-print(f)
-
-#*-----------------------------------------------------------------------*
-
-#slicing of Array
-
-a = np.arange(50).reshape(5,10)
-print(a)                                                       #<----print mat. up to 49
-
-print(a[1:4,2:8])                                              # row 1 to 3 and col 2 to 7 ,last value is ignored
-
-print(a[1: , 2: ])                                             # upto last value blank space means is upto last
-
-print(a[ :4 ,  : 5])                                           # row 0 to 3 col 0 to 4
-
-print(a[ :5 , :])                                              # row 0 to 4 and col start to end print
-
-print(a[ :5 , 3])                                              # row row 0 to 4 and col only 3 
-
-print(a[ :5, -1])                                              # -1 is showing last col
-
-print(a[ :5, -2])                                              # -2 is showing 2nd last col
-
-
-a= np.arange(20)
-print(a)
-
-print(a[a>5])                                                  # to print number above 5 in an array
-
-#print(a[a>7 and a%5==0])                                      # and operation is used check (error)
-
-print(a[a>5])                                                  # checking 2 conditions num >5 and divisible by 5
-b=a[a>7]
-c=b[b%5 == 0]
-print(c)
-
-
-a= np.arange(50).reshape(5,10)                                 #<------flip array by every col
-print(a)                                                       #last col to 1st
-print("\n")
-print("Flip Array in row wise")
-print("\n")
-b= np.flip(a,axis=0)
-print(b)
-
+print("------------------------------END------------------------------------")
 
 a= np.arange(50).reshape(5,10)                                 #<------flip array by every row 
 print(a)                                                       #and last row to 1st num
@@ -158,3 +82,139 @@ print("Flip Array in col wise")
 print("\n")
 b= np.flip(a,axis=1)
 print(b)
+
+#------------------------------------OUTPUT------------------------------------------------
+
+
+*------------------------NUMPY_OPERATION------------------------*
+A = 
+ [[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+B = 
+ [[9 8 7]
+ [6 5 4]
+ [3 2 1]]
+C = 
+ [ 1  2  3  4  5  6  7  8  9 10]
+D = 
+ [[1]
+ [2]
+ [3]
+ [4]]
+------------------------------------------------------------------
+A + B =
+ [[10 10 10]
+ [10 10 10]
+ [10 10 10]]
+A - B =
+ [[-8 -6 -4]
+ [-2  0  2]
+ [ 4  6  8]]
+A * B =
+ [[ 9 16 21]
+ [24 25 24]
+ [21 16  9]]
+A / B =
+ [[0.11111111 0.25       0.42857143]
+ [0.66666667 1.         1.5       ]
+ [2.33333333 4.         9.        ]]
+------------------------------------------------------------------
+[A]*[B] = 
+ [[ 30  24  18]
+ [ 84  69  54]
+ [138 114  90]]
+
+Sum of elements of A = 
+ 45
+Sum of elements of A Column wise = 
+ [12 15 18]
+Sum of elements of A Row wise = 
+ [ 6 15 24]
+
+------------------------------------------------------------------
+Mean of Matrix A =  5.0
+Mean of Matrix A column wise =  [4. 5. 6.]
+Mean of Matrix A row wise =  [2. 5. 8.]
+
+------------------------------------------------------------------
+Median of A =  5.0
+Median of A =  [4. 5. 6.]
+Median of A =  [2. 5. 8.]
+
+------------------------------------------------------------------
+D matrix using vstack = 
+ [1 2 3 4]
+C matrix using hstack = 
+ [[ 1]
+ [ 2]
+ [ 3]
+ [ 4]
+ [ 5]
+ [ 6]
+ [ 7]
+ [ 8]
+ [ 9]
+ [10]]
+
+------------------------------------------------------------------
+Transpose of matrix A = 
+ [[1 4 7]
+ [2 5 8]
+ [3 6 9]]
+
+------------------------------------------------------------------
+Matrix A (using flip)=
+ [[9 8 7]
+ [6 5 4]
+ [3 2 1]]
+Matrix D (using flip)=
+ [[4]
+ [3]
+ [2]
+ [1]]
+
+------------------------------------------------------------------
+[[ 1  2  3  4  5]
+ [ 6  7  8  9 10]
+ [11 12 13 14 15]
+ [16 17 18 19 20]]
+
+------------------------------------------------------------------
+Lmatrix = 
+ [[ 0  1  2  3  4]
+ [ 5  6  7  8  9]
+ [10 11 12 13 14]
+ [15 16 17 18 19]]
+
+------------------------------------------------------------------
+Matrix from row 1 to 2 and col 1 to 3 = 
+ [[ 6  7  8]
+ [11 12 13]]
+
+Matrix from row 0 to 2 = 
+ [[ 0  1  2  3  4]
+ [ 5  6  7  8  9]
+ [10 11 12 13 14]]
+
+Matrix whole row and col starting to 2 = 
+ [[ 0  1  2]
+ [ 5  6  7]
+ [10 11 12]
+ [15 16 17]]
+
+Matrix from row 0 to -1 and col 0 to -1 = 
+ [[ 0  1  2  3]
+ [ 5  6  7  8]
+ [10 11 12 13]]
+
+------------------------------------------------------------------
+Matrix element only divided by 5 = 
+ [ 0  5 10 15]
+
+Matrix element only which are greater than 14 = 
+ [14 15 16 17 18 19]
+
+------------------------------END------------------------------------
+
+
