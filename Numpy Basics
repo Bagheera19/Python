@@ -17,46 +17,68 @@ d = np.array([[1,],[2,],[3,],[4,]])
 print("D = \n",d)
 print("------------------------------------------------------------------")
 
+print("Dimension of A = ",np.ndim(a))                        # Dimension of A
+print("Type of A = ",type(a))                                # type of array
+print("Ones matrix One = \n",np.ones((3,3)))                 # 3 by 3 matrix of 1
+print("Zeros matrix Zero =\n",np.zeros((3,3)))               # 3 by 3 matrix of 0
+print("Shape(row,col) of A = ",a.shape)                      # display shape of A
+print("Count(a.size) of element in A = ",a.size)             # display count of element in matrix
+print("Data type of A = ",a.dtype)                           # data type of matrix
+print("Item size of A = ",a.itemsize)
+print("------------------------------------------------------------------")
+
+print("Identity matrix = \n",np.eye(3,3))                                       # identity matrix of 3 by 3
+print("Identity matrix using k value as -1(shift down) = \n",np.eye(3,3,k=-1))  # identity matrix of 3,3 k as -1 shift downwards
+print("Identity matrix using k value as -1(shift down) = \n",np.eye(3,3,k=1))   # identity matrix of 3,3 k as -1 shift upwards
+print("------------------------------------------------------------------")
+print()
+
+print("Sine function using Numpy = \n",np.sin(a));print()       # np.sin(arrayname)
+print("Sine of 90 = ",np.sin(90));print()
+print("Cosine(0) function using Numpy =",np.cos(0))             # np.cos(value)
+print("------------------------------------------------------------------")
+print()
+
 print("A + B =\n",a+b)
 print("A - B =\n",a-b)
-print("A * B =\n",a*b)             # direct element multiplication (a11 * b11)
+print("A * B =\n",a*b)                                          # direct element multiplication (a11 * b11)
 print("A / B =\n",a/b)
 print("------------------------------------------------------------------")
 
-print("[A]*[B] = \n",np.dot(a,b));print()    # proper row to column multiplication (a11*b11+a12*b21+a13*b31 = 30)
+print("[A]*[B] = \n",np.dot(a,b));print()                       # proper row to column multiplication (a11*b11+a12*b21+a13*b31 = 30)
 
-print("Sum of elements of A = \n",np.sum(a))   # Sum of elements of A
-print("Sum of elements of A Column wise = \n",np.sum(a,axis = 0))  #Sum of elements of A Column wise
-print("Sum of elements of A Row wise = \n",np.sum(a,axis = 1));print()  #Sum of elements of A Row wise
+print("Sum of elements of A = \n",np.sum(a))                                 # Sum of elements of A
+print("Sum of elements of A Column wise = \n",np.sum(a,axis = 0))            # Sum of elements of A Column wise
+print("Sum of elements of A Row wise = \n",np.sum(a,axis = 1));print()       # Sum of elements of A Row wise
 print("------------------------------------------------------------------")
 
-print("Mean of Matrix A = ",np.mean(a))     # sum/total number of elements  45/9 = 5.0
-print("Mean of Matrix A column wise = ",np.mean(a,axis = 0)) # sum of element in each col /total number of elements in col 12/3 = 4.0
-print("Mean of Matrix A row wise = ",np.mean(a,axis = 1));print() # sum of element in each row /total number of elements in row 6/3 = 2.0
+print("Mean of Matrix A = ",np.mean(a))                                      # sum/total number of elements  45/9 = 5.0
+print("Mean of Matrix A column wise = ",np.mean(a,axis = 0))                 # sum of element in each col /total number of elements in col 12/3 = 4.0
+print("Mean of Matrix A row wise = ",np.mean(a,axis = 1));print()            # sum of element in each row /total number of elements in row 6/3 = 2.0
 print("------------------------------------------------------------------")
 
-print("Median of A = ",np.median(a))                 # finds the middle value of matrix
-print("Median of A = ",np.median(a,axis = 0))        # finds the middle value of col wise of a matrix
-print("Median of A = ",np.median(a,axis = 1));print()        # finds the middle value of row wise of a matrix
+print("Median of A = ",np.median(a))                                         # finds the middle value of matrix
+print("Median of A = ",np.median(a,axis = 0))                                # finds the middle value of col wise of a matrix
+print("Median of A = ",np.median(a,axis = 1));print()                        # finds the middle value of row wise of a matrix
 print("------------------------------------------------------------------")
 
-print("D matrix using vstack = \n",np.hstack(d))      # make vertical matrix into horizontal matrix
-print("C matrix using hstack = \n",np.vstack(c));print()      # make horizontal matrix into vertical matrix
+print("D matrix using vstack = \n",np.hstack(d))                             # make vertical matrix into horizontal matrix
+print("C matrix using hstack = \n",np.vstack(c));print()                     # make horizontal matrix into vertical matrix
 print("------------------------------------------------------------------")
 
-print("Transpose of matrix A = \n",np.transpose(a));print()     # transpose row to column
+print("Transpose of matrix A = \n",np.transpose(a));print()                  # transpose row to column
 print("------------------------------------------------------------------")
 
-print("Matrix A (using flip)=\n",np.flip(a))            # print last to first
+print("Matrix A (using flip)=\n",np.flip(a))                                 # print last to first
 print("Matrix D (using flip)=\n",np.flip(d));print()
 print("------------------------------------------------------------------")
 
-smartix  = np.arange(1,21).reshape(4,5)                # arange take value from 1 to 20 and reshape make matrix into row 4*5 col
+smartix  = np.arange(1,21).reshape(4,5)                                      # arange take value from 1 to 20 and reshape make matrix into row 4*5 col
 print(smartix);print()
 print("------------------------------------------------------------------")
 
 #slicing of array
-Lmatrix = np.arange(20).reshape(4,5)                  # arange takes value from 0 to 19, 20 is excluded
+Lmatrix = np.arange(20).reshape(4,5)                                         # arange takes value from 0 to 19, 20 is excluded
 print("Lmatrix = \n",Lmatrix);print()
 print("------------------------------------------------------------------")
 
@@ -72,16 +94,40 @@ print("------------------------------------------------------------------")
 
 print("Matrix element only divided by 5 = \n",Lmatrix[Lmatrix%5 == 0]);print()
 print("Matrix element only which are greater than 14 = \n",Lmatrix[Lmatrix>13]);print()
+print("------------------------------------------------------------------")
+print()
+
+# #Seraching  --> where()
+# whereis = a.where(a%3 == 0)
+# print("where is no 7 in matrix A = ",whereis)
+
+#filtering array
+a=np.array([12,10,3,4,23,1,5])
+print("Matrix to be filtered = \n",a)
+n=[]
+for i in a:
+    if i>10:
+        n.append(i)
+print(n)
+print("------------------------------------------------------------------")
+print()
+
+#sort
+a.sort()
+print("Sorted array = ",a)
+print("------------------------------------------------------------------")
+print()
+
+# #searching element
+#
+# arr = np.array([1, 12, 3, 4,9, 6, 7, 8])
+# #all index positions where the given condition is true
+# x = np.where(arr%3 == 0)
+# print(x)
 
 print("------------------------------END------------------------------------")
 
-a= np.arange(50).reshape(5,10)                                 #<------flip array by every row 
-print(a)                                                       #and last row to 1st num
-print("\n")
-print("Flip Array in col wise")
-print("\n")
-b= np.flip(a,axis=1)
-print(b)
+
 
 #------------------------------------OUTPUT------------------------------------------------
 
@@ -103,6 +149,45 @@ D =
  [3]
  [4]]
 ------------------------------------------------------------------
+Dimension of A =  2
+Type of A =  <class 'numpy.ndarray'>
+Ones matrix One = 
+ [[1. 1. 1.]
+ [1. 1. 1.]
+ [1. 1. 1.]]
+Zeros matrix Zero =
+ [[0. 0. 0.]
+ [0. 0. 0.]
+ [0. 0. 0.]]
+Shape(row,col) of A =  (3, 3)
+Count(a.size) of element in A =  9
+Data type of A =  int32
+Item size of A =  4
+------------------------------------------------------------------
+Identity matrix = 
+ [[1. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 1.]]
+Identity matrix using k value as -1(shift down) = 
+ [[0. 0. 0.]
+ [1. 0. 0.]
+ [0. 1. 0.]]
+Identity matrix using k value as -1(shift down) = 
+ [[0. 1. 0.]
+ [0. 0. 1.]
+ [0. 0. 0.]]
+------------------------------------------------------------------
+
+Sine function using Numpy = 
+ [[ 0.84147098  0.90929743  0.14112001]
+ [-0.7568025  -0.95892427 -0.2794155 ]
+ [ 0.6569866   0.98935825  0.41211849]]
+
+Sine of 90 =  0.8939966636005579
+
+Cosine(0) function using Numpy = 1.0
+------------------------------------------------------------------
+
 A + B =
  [[10 10 10]
  [10 10 10]
@@ -215,6 +300,17 @@ Matrix element only divided by 5 =
 Matrix element only which are greater than 14 = 
  [14 15 16 17 18 19]
 
+------------------------------------------------------------------
+
+Matrix to be filtered = 
+ [12 10  3  4 23  1  5]
+[12, 23]
+------------------------------------------------------------------
+
+Sorted array =  [ 1  3  4  5 10 12 23]
+------------------------------------------------------------------
+
 ------------------------------END------------------------------------
+
 
 
